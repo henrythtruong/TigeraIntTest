@@ -1,0 +1,481 @@
+<?xml version="1.0" encoding="utf-8"?><testsuite errors="0" failures="15" name="pytest" skips="0" tests="20" time="0.260"><testcase classname="test_Log" file="test_Log.py" line="14" name="test_LogTypeCount[INFO-50]" time="0.0024209022521972656"></testcase><testcase classname="test_Log" file="test_Log.py" line="14" name="test_LogTypeCount[WARNING-11]" time="0.0013127326965332031"></testcase><testcase classname="test_Log" file="test_Log.py" line="14" name="test_LogTypeCount[ERROR-3]" time="0.0014007091522216797"></testcase><testcase classname="test_Log" file="test_Log.py" line="14" name="test_LogTypeCount[INFO-0]" time="0.0019240379333496094"><failure message="AssertionError: assert 0 == 50
+ +  where 50 = &lt;bound method Log.getCountByType of &lt;logfile.Log object at 0x10d872358&gt;&gt;(&apos;INFO&apos;)
+ +    where &lt;bound method Log.getCountByType of &lt;logfile.Log object at 0x10d872358&gt;&gt; = &lt;logfile.Log object at 0x10d872358&gt;.getCountByType">log = &lt;logfile.Log object at 0x10d872358&gt;, logtype = &apos;INFO&apos;, expected = 0
+
+    @pytest.mark.parametrize(&quot;logtype,expected&quot;, [
+        (&apos;INFO&apos;,50),
+        (&apos;WARNING&apos;,11),
+        (&apos;ERROR&apos;,3),
+        (&apos;INFO&apos;,0),
+        (&apos;WARNING&apos;,0),
+        (&apos;ERROR&apos;,0),
+        (&apos;INFO&apos;,-1),
+        (&apos;WARNING&apos;,-1),
+        (&apos;ERROR&apos;,-1),
+        (&apos;INFO&apos;,9999999999),
+        (&apos;WARNING&apos;,9999999999),
+        (&apos;ERROR&apos;,9999999999),
+        (&apos;INVALIDLOGTYPE&apos;,0),
+        (&apos;INVALIDLOGTYPE&apos;,-1),
+        (&apos;INVALIDLOGTYPE&apos;,1),
+        (123,123),
+        (&apos;&apos;,1),
+        (None,0),
+        (None,1),
+        (&apos;INFO&apos;,None),
+    ])
+    def test_LogTypeCount(log,logtype,expected):
+&gt;       assert expected == log.getCountByType(logtype)
+E       AssertionError: assert 0 == 50
+E        +  where 50 = &lt;bound method Log.getCountByType of &lt;logfile.Log object at 0x10d872358&gt;&gt;(&apos;INFO&apos;)
+E        +    where &lt;bound method Log.getCountByType of &lt;logfile.Log object at 0x10d872358&gt;&gt; = &lt;logfile.Log object at 0x10d872358&gt;.getCountByType
+
+test_Log.py:38: AssertionError</failure></testcase><testcase classname="test_Log" file="test_Log.py" line="14" name="test_LogTypeCount[WARNING-0]" time="0.0019495487213134766"><failure message="AssertionError: assert 0 == 11
+ +  where 11 = &lt;bound method Log.getCountByType of &lt;logfile.Log object at 0x10d9dd710&gt;&gt;(&apos;WARNING&apos;)
+ +    where &lt;bound method Log.getCountByType of &lt;logfile.Log object at 0x10d9dd710&gt;&gt; = &lt;logfile.Log object at 0x10d9dd710&gt;.getCountByType">log = &lt;logfile.Log object at 0x10d9dd710&gt;, logtype = &apos;WARNING&apos;, expected = 0
+
+    @pytest.mark.parametrize(&quot;logtype,expected&quot;, [
+        (&apos;INFO&apos;,50),
+        (&apos;WARNING&apos;,11),
+        (&apos;ERROR&apos;,3),
+        (&apos;INFO&apos;,0),
+        (&apos;WARNING&apos;,0),
+        (&apos;ERROR&apos;,0),
+        (&apos;INFO&apos;,-1),
+        (&apos;WARNING&apos;,-1),
+        (&apos;ERROR&apos;,-1),
+        (&apos;INFO&apos;,9999999999),
+        (&apos;WARNING&apos;,9999999999),
+        (&apos;ERROR&apos;,9999999999),
+        (&apos;INVALIDLOGTYPE&apos;,0),
+        (&apos;INVALIDLOGTYPE&apos;,-1),
+        (&apos;INVALIDLOGTYPE&apos;,1),
+        (123,123),
+        (&apos;&apos;,1),
+        (None,0),
+        (None,1),
+        (&apos;INFO&apos;,None),
+    ])
+    def test_LogTypeCount(log,logtype,expected):
+&gt;       assert expected == log.getCountByType(logtype)
+E       AssertionError: assert 0 == 11
+E        +  where 11 = &lt;bound method Log.getCountByType of &lt;logfile.Log object at 0x10d9dd710&gt;&gt;(&apos;WARNING&apos;)
+E        +    where &lt;bound method Log.getCountByType of &lt;logfile.Log object at 0x10d9dd710&gt;&gt; = &lt;logfile.Log object at 0x10d9dd710&gt;.getCountByType
+
+test_Log.py:38: AssertionError</failure></testcase><testcase classname="test_Log" file="test_Log.py" line="14" name="test_LogTypeCount[ERROR-0]" time="0.0016129016876220703"><failure message="AssertionError: assert 0 == 3
+ +  where 3 = &lt;bound method Log.getCountByType of &lt;logfile.Log object at 0x10d9eda20&gt;&gt;(&apos;ERROR&apos;)
+ +    where &lt;bound method Log.getCountByType of &lt;logfile.Log object at 0x10d9eda20&gt;&gt; = &lt;logfile.Log object at 0x10d9eda20&gt;.getCountByType">log = &lt;logfile.Log object at 0x10d9eda20&gt;, logtype = &apos;ERROR&apos;, expected = 0
+
+    @pytest.mark.parametrize(&quot;logtype,expected&quot;, [
+        (&apos;INFO&apos;,50),
+        (&apos;WARNING&apos;,11),
+        (&apos;ERROR&apos;,3),
+        (&apos;INFO&apos;,0),
+        (&apos;WARNING&apos;,0),
+        (&apos;ERROR&apos;,0),
+        (&apos;INFO&apos;,-1),
+        (&apos;WARNING&apos;,-1),
+        (&apos;ERROR&apos;,-1),
+        (&apos;INFO&apos;,9999999999),
+        (&apos;WARNING&apos;,9999999999),
+        (&apos;ERROR&apos;,9999999999),
+        (&apos;INVALIDLOGTYPE&apos;,0),
+        (&apos;INVALIDLOGTYPE&apos;,-1),
+        (&apos;INVALIDLOGTYPE&apos;,1),
+        (123,123),
+        (&apos;&apos;,1),
+        (None,0),
+        (None,1),
+        (&apos;INFO&apos;,None),
+    ])
+    def test_LogTypeCount(log,logtype,expected):
+&gt;       assert expected == log.getCountByType(logtype)
+E       AssertionError: assert 0 == 3
+E        +  where 3 = &lt;bound method Log.getCountByType of &lt;logfile.Log object at 0x10d9eda20&gt;&gt;(&apos;ERROR&apos;)
+E        +    where &lt;bound method Log.getCountByType of &lt;logfile.Log object at 0x10d9eda20&gt;&gt; = &lt;logfile.Log object at 0x10d9eda20&gt;.getCountByType
+
+test_Log.py:38: AssertionError</failure></testcase><testcase classname="test_Log" file="test_Log.py" line="14" name="test_LogTypeCount[INFO--1]" time="0.0015959739685058594"><failure message="AssertionError: assert -1 == 50
+ +  where 50 = &lt;bound method Log.getCountByType of &lt;logfile.Log object at 0x10d9f8470&gt;&gt;(&apos;INFO&apos;)
+ +    where &lt;bound method Log.getCountByType of &lt;logfile.Log object at 0x10d9f8470&gt;&gt; = &lt;logfile.Log object at 0x10d9f8470&gt;.getCountByType">log = &lt;logfile.Log object at 0x10d9f8470&gt;, logtype = &apos;INFO&apos;, expected = -1
+
+    @pytest.mark.parametrize(&quot;logtype,expected&quot;, [
+        (&apos;INFO&apos;,50),
+        (&apos;WARNING&apos;,11),
+        (&apos;ERROR&apos;,3),
+        (&apos;INFO&apos;,0),
+        (&apos;WARNING&apos;,0),
+        (&apos;ERROR&apos;,0),
+        (&apos;INFO&apos;,-1),
+        (&apos;WARNING&apos;,-1),
+        (&apos;ERROR&apos;,-1),
+        (&apos;INFO&apos;,9999999999),
+        (&apos;WARNING&apos;,9999999999),
+        (&apos;ERROR&apos;,9999999999),
+        (&apos;INVALIDLOGTYPE&apos;,0),
+        (&apos;INVALIDLOGTYPE&apos;,-1),
+        (&apos;INVALIDLOGTYPE&apos;,1),
+        (123,123),
+        (&apos;&apos;,1),
+        (None,0),
+        (None,1),
+        (&apos;INFO&apos;,None),
+    ])
+    def test_LogTypeCount(log,logtype,expected):
+&gt;       assert expected == log.getCountByType(logtype)
+E       AssertionError: assert -1 == 50
+E        +  where 50 = &lt;bound method Log.getCountByType of &lt;logfile.Log object at 0x10d9f8470&gt;&gt;(&apos;INFO&apos;)
+E        +    where &lt;bound method Log.getCountByType of &lt;logfile.Log object at 0x10d9f8470&gt;&gt; = &lt;logfile.Log object at 0x10d9f8470&gt;.getCountByType
+
+test_Log.py:38: AssertionError</failure></testcase><testcase classname="test_Log" file="test_Log.py" line="14" name="test_LogTypeCount[WARNING--1]" time="0.0015630722045898438"><failure message="AssertionError: assert -1 == 11
+ +  where 11 = &lt;bound method Log.getCountByType of &lt;logfile.Log object at 0x10da0c4e0&gt;&gt;(&apos;WARNING&apos;)
+ +    where &lt;bound method Log.getCountByType of &lt;logfile.Log object at 0x10da0c4e0&gt;&gt; = &lt;logfile.Log object at 0x10da0c4e0&gt;.getCountByType">log = &lt;logfile.Log object at 0x10da0c4e0&gt;, logtype = &apos;WARNING&apos;, expected = -1
+
+    @pytest.mark.parametrize(&quot;logtype,expected&quot;, [
+        (&apos;INFO&apos;,50),
+        (&apos;WARNING&apos;,11),
+        (&apos;ERROR&apos;,3),
+        (&apos;INFO&apos;,0),
+        (&apos;WARNING&apos;,0),
+        (&apos;ERROR&apos;,0),
+        (&apos;INFO&apos;,-1),
+        (&apos;WARNING&apos;,-1),
+        (&apos;ERROR&apos;,-1),
+        (&apos;INFO&apos;,9999999999),
+        (&apos;WARNING&apos;,9999999999),
+        (&apos;ERROR&apos;,9999999999),
+        (&apos;INVALIDLOGTYPE&apos;,0),
+        (&apos;INVALIDLOGTYPE&apos;,-1),
+        (&apos;INVALIDLOGTYPE&apos;,1),
+        (123,123),
+        (&apos;&apos;,1),
+        (None,0),
+        (None,1),
+        (&apos;INFO&apos;,None),
+    ])
+    def test_LogTypeCount(log,logtype,expected):
+&gt;       assert expected == log.getCountByType(logtype)
+E       AssertionError: assert -1 == 11
+E        +  where 11 = &lt;bound method Log.getCountByType of &lt;logfile.Log object at 0x10da0c4e0&gt;&gt;(&apos;WARNING&apos;)
+E        +    where &lt;bound method Log.getCountByType of &lt;logfile.Log object at 0x10da0c4e0&gt;&gt; = &lt;logfile.Log object at 0x10da0c4e0&gt;.getCountByType
+
+test_Log.py:38: AssertionError</failure></testcase><testcase classname="test_Log" file="test_Log.py" line="14" name="test_LogTypeCount[ERROR--1]" time="0.001767873764038086"><failure message="AssertionError: assert -1 == 3
+ +  where 3 = &lt;bound method Log.getCountByType of &lt;logfile.Log object at 0x10da17240&gt;&gt;(&apos;ERROR&apos;)
+ +    where &lt;bound method Log.getCountByType of &lt;logfile.Log object at 0x10da17240&gt;&gt; = &lt;logfile.Log object at 0x10da17240&gt;.getCountByType">log = &lt;logfile.Log object at 0x10da17240&gt;, logtype = &apos;ERROR&apos;, expected = -1
+
+    @pytest.mark.parametrize(&quot;logtype,expected&quot;, [
+        (&apos;INFO&apos;,50),
+        (&apos;WARNING&apos;,11),
+        (&apos;ERROR&apos;,3),
+        (&apos;INFO&apos;,0),
+        (&apos;WARNING&apos;,0),
+        (&apos;ERROR&apos;,0),
+        (&apos;INFO&apos;,-1),
+        (&apos;WARNING&apos;,-1),
+        (&apos;ERROR&apos;,-1),
+        (&apos;INFO&apos;,9999999999),
+        (&apos;WARNING&apos;,9999999999),
+        (&apos;ERROR&apos;,9999999999),
+        (&apos;INVALIDLOGTYPE&apos;,0),
+        (&apos;INVALIDLOGTYPE&apos;,-1),
+        (&apos;INVALIDLOGTYPE&apos;,1),
+        (123,123),
+        (&apos;&apos;,1),
+        (None,0),
+        (None,1),
+        (&apos;INFO&apos;,None),
+    ])
+    def test_LogTypeCount(log,logtype,expected):
+&gt;       assert expected == log.getCountByType(logtype)
+E       AssertionError: assert -1 == 3
+E        +  where 3 = &lt;bound method Log.getCountByType of &lt;logfile.Log object at 0x10da17240&gt;&gt;(&apos;ERROR&apos;)
+E        +    where &lt;bound method Log.getCountByType of &lt;logfile.Log object at 0x10da17240&gt;&gt; = &lt;logfile.Log object at 0x10da17240&gt;.getCountByType
+
+test_Log.py:38: AssertionError</failure></testcase><testcase classname="test_Log" file="test_Log.py" line="14" name="test_LogTypeCount[INFO-9999999999]" time="0.0017206668853759766"><failure message="AssertionError: assert 9999999999 == 50
+ +  where 50 = &lt;bound method Log.getCountByType of &lt;logfile.Log object at 0x10da23da0&gt;&gt;(&apos;INFO&apos;)
+ +    where &lt;bound method Log.getCountByType of &lt;logfile.Log object at 0x10da23da0&gt;&gt; = &lt;logfile.Log object at 0x10da23da0&gt;.getCountByType">log = &lt;logfile.Log object at 0x10da23da0&gt;, logtype = &apos;INFO&apos;, expected = 9999999999
+
+    @pytest.mark.parametrize(&quot;logtype,expected&quot;, [
+        (&apos;INFO&apos;,50),
+        (&apos;WARNING&apos;,11),
+        (&apos;ERROR&apos;,3),
+        (&apos;INFO&apos;,0),
+        (&apos;WARNING&apos;,0),
+        (&apos;ERROR&apos;,0),
+        (&apos;INFO&apos;,-1),
+        (&apos;WARNING&apos;,-1),
+        (&apos;ERROR&apos;,-1),
+        (&apos;INFO&apos;,9999999999),
+        (&apos;WARNING&apos;,9999999999),
+        (&apos;ERROR&apos;,9999999999),
+        (&apos;INVALIDLOGTYPE&apos;,0),
+        (&apos;INVALIDLOGTYPE&apos;,-1),
+        (&apos;INVALIDLOGTYPE&apos;,1),
+        (123,123),
+        (&apos;&apos;,1),
+        (None,0),
+        (None,1),
+        (&apos;INFO&apos;,None),
+    ])
+    def test_LogTypeCount(log,logtype,expected):
+&gt;       assert expected == log.getCountByType(logtype)
+E       AssertionError: assert 9999999999 == 50
+E        +  where 50 = &lt;bound method Log.getCountByType of &lt;logfile.Log object at 0x10da23da0&gt;&gt;(&apos;INFO&apos;)
+E        +    where &lt;bound method Log.getCountByType of &lt;logfile.Log object at 0x10da23da0&gt;&gt; = &lt;logfile.Log object at 0x10da23da0&gt;.getCountByType
+
+test_Log.py:38: AssertionError</failure></testcase><testcase classname="test_Log" file="test_Log.py" line="14" name="test_LogTypeCount[WARNING-9999999999]" time="0.0016193389892578125"><failure message="AssertionError: assert 9999999999 == 11
+ +  where 11 = &lt;bound method Log.getCountByType of &lt;logfile.Log object at 0x10da40048&gt;&gt;(&apos;WARNING&apos;)
+ +    where &lt;bound method Log.getCountByType of &lt;logfile.Log object at 0x10da40048&gt;&gt; = &lt;logfile.Log object at 0x10da40048&gt;.getCountByType">log = &lt;logfile.Log object at 0x10da40048&gt;, logtype = &apos;WARNING&apos;, expected = 9999999999
+
+    @pytest.mark.parametrize(&quot;logtype,expected&quot;, [
+        (&apos;INFO&apos;,50),
+        (&apos;WARNING&apos;,11),
+        (&apos;ERROR&apos;,3),
+        (&apos;INFO&apos;,0),
+        (&apos;WARNING&apos;,0),
+        (&apos;ERROR&apos;,0),
+        (&apos;INFO&apos;,-1),
+        (&apos;WARNING&apos;,-1),
+        (&apos;ERROR&apos;,-1),
+        (&apos;INFO&apos;,9999999999),
+        (&apos;WARNING&apos;,9999999999),
+        (&apos;ERROR&apos;,9999999999),
+        (&apos;INVALIDLOGTYPE&apos;,0),
+        (&apos;INVALIDLOGTYPE&apos;,-1),
+        (&apos;INVALIDLOGTYPE&apos;,1),
+        (123,123),
+        (&apos;&apos;,1),
+        (None,0),
+        (None,1),
+        (&apos;INFO&apos;,None),
+    ])
+    def test_LogTypeCount(log,logtype,expected):
+&gt;       assert expected == log.getCountByType(logtype)
+E       AssertionError: assert 9999999999 == 11
+E        +  where 11 = &lt;bound method Log.getCountByType of &lt;logfile.Log object at 0x10da40048&gt;&gt;(&apos;WARNING&apos;)
+E        +    where &lt;bound method Log.getCountByType of &lt;logfile.Log object at 0x10da40048&gt;&gt; = &lt;logfile.Log object at 0x10da40048&gt;.getCountByType
+
+test_Log.py:38: AssertionError</failure></testcase><testcase classname="test_Log" file="test_Log.py" line="14" name="test_LogTypeCount[ERROR-9999999999]" time="0.0015799999237060547"><failure message="AssertionError: assert 9999999999 == 3
+ +  where 3 = &lt;bound method Log.getCountByType of &lt;logfile.Log object at 0x10da497f0&gt;&gt;(&apos;ERROR&apos;)
+ +    where &lt;bound method Log.getCountByType of &lt;logfile.Log object at 0x10da497f0&gt;&gt; = &lt;logfile.Log object at 0x10da497f0&gt;.getCountByType">log = &lt;logfile.Log object at 0x10da497f0&gt;, logtype = &apos;ERROR&apos;, expected = 9999999999
+
+    @pytest.mark.parametrize(&quot;logtype,expected&quot;, [
+        (&apos;INFO&apos;,50),
+        (&apos;WARNING&apos;,11),
+        (&apos;ERROR&apos;,3),
+        (&apos;INFO&apos;,0),
+        (&apos;WARNING&apos;,0),
+        (&apos;ERROR&apos;,0),
+        (&apos;INFO&apos;,-1),
+        (&apos;WARNING&apos;,-1),
+        (&apos;ERROR&apos;,-1),
+        (&apos;INFO&apos;,9999999999),
+        (&apos;WARNING&apos;,9999999999),
+        (&apos;ERROR&apos;,9999999999),
+        (&apos;INVALIDLOGTYPE&apos;,0),
+        (&apos;INVALIDLOGTYPE&apos;,-1),
+        (&apos;INVALIDLOGTYPE&apos;,1),
+        (123,123),
+        (&apos;&apos;,1),
+        (None,0),
+        (None,1),
+        (&apos;INFO&apos;,None),
+    ])
+    def test_LogTypeCount(log,logtype,expected):
+&gt;       assert expected == log.getCountByType(logtype)
+E       AssertionError: assert 9999999999 == 3
+E        +  where 3 = &lt;bound method Log.getCountByType of &lt;logfile.Log object at 0x10da497f0&gt;&gt;(&apos;ERROR&apos;)
+E        +    where &lt;bound method Log.getCountByType of &lt;logfile.Log object at 0x10da497f0&gt;&gt; = &lt;logfile.Log object at 0x10da497f0&gt;.getCountByType
+
+test_Log.py:38: AssertionError</failure></testcase><testcase classname="test_Log" file="test_Log.py" line="14" name="test_LogTypeCount[INVALIDLOGTYPE-0]" time="0.0013697147369384766"></testcase><testcase classname="test_Log" file="test_Log.py" line="14" name="test_LogTypeCount[INVALIDLOGTYPE--1]" time="0.0015745162963867188"><failure message="AssertionError: assert -1 == 0
+ +  where 0 = &lt;bound method Log.getCountByType of &lt;logfile.Log object at 0x10da50128&gt;&gt;(&apos;INVALIDLOGTYPE&apos;)
+ +    where &lt;bound method Log.getCountByType of &lt;logfile.Log object at 0x10da50128&gt;&gt; = &lt;logfile.Log object at 0x10da50128&gt;.getCountByType">log = &lt;logfile.Log object at 0x10da50128&gt;, logtype = &apos;INVALIDLOGTYPE&apos;, expected = -1
+
+    @pytest.mark.parametrize(&quot;logtype,expected&quot;, [
+        (&apos;INFO&apos;,50),
+        (&apos;WARNING&apos;,11),
+        (&apos;ERROR&apos;,3),
+        (&apos;INFO&apos;,0),
+        (&apos;WARNING&apos;,0),
+        (&apos;ERROR&apos;,0),
+        (&apos;INFO&apos;,-1),
+        (&apos;WARNING&apos;,-1),
+        (&apos;ERROR&apos;,-1),
+        (&apos;INFO&apos;,9999999999),
+        (&apos;WARNING&apos;,9999999999),
+        (&apos;ERROR&apos;,9999999999),
+        (&apos;INVALIDLOGTYPE&apos;,0),
+        (&apos;INVALIDLOGTYPE&apos;,-1),
+        (&apos;INVALIDLOGTYPE&apos;,1),
+        (123,123),
+        (&apos;&apos;,1),
+        (None,0),
+        (None,1),
+        (&apos;INFO&apos;,None),
+    ])
+    def test_LogTypeCount(log,logtype,expected):
+&gt;       assert expected == log.getCountByType(logtype)
+E       AssertionError: assert -1 == 0
+E        +  where 0 = &lt;bound method Log.getCountByType of &lt;logfile.Log object at 0x10da50128&gt;&gt;(&apos;INVALIDLOGTYPE&apos;)
+E        +    where &lt;bound method Log.getCountByType of &lt;logfile.Log object at 0x10da50128&gt;&gt; = &lt;logfile.Log object at 0x10da50128&gt;.getCountByType
+
+test_Log.py:38: AssertionError</failure></testcase><testcase classname="test_Log" file="test_Log.py" line="14" name="test_LogTypeCount[INVALIDLOGTYPE-1]" time="0.0017547607421875"><failure message="AssertionError: assert 1 == 0
+ +  where 0 = &lt;bound method Log.getCountByType of &lt;logfile.Log object at 0x10da55978&gt;&gt;(&apos;INVALIDLOGTYPE&apos;)
+ +    where &lt;bound method Log.getCountByType of &lt;logfile.Log object at 0x10da55978&gt;&gt; = &lt;logfile.Log object at 0x10da55978&gt;.getCountByType">log = &lt;logfile.Log object at 0x10da55978&gt;, logtype = &apos;INVALIDLOGTYPE&apos;, expected = 1
+
+    @pytest.mark.parametrize(&quot;logtype,expected&quot;, [
+        (&apos;INFO&apos;,50),
+        (&apos;WARNING&apos;,11),
+        (&apos;ERROR&apos;,3),
+        (&apos;INFO&apos;,0),
+        (&apos;WARNING&apos;,0),
+        (&apos;ERROR&apos;,0),
+        (&apos;INFO&apos;,-1),
+        (&apos;WARNING&apos;,-1),
+        (&apos;ERROR&apos;,-1),
+        (&apos;INFO&apos;,9999999999),
+        (&apos;WARNING&apos;,9999999999),
+        (&apos;ERROR&apos;,9999999999),
+        (&apos;INVALIDLOGTYPE&apos;,0),
+        (&apos;INVALIDLOGTYPE&apos;,-1),
+        (&apos;INVALIDLOGTYPE&apos;,1),
+        (123,123),
+        (&apos;&apos;,1),
+        (None,0),
+        (None,1),
+        (&apos;INFO&apos;,None),
+    ])
+    def test_LogTypeCount(log,logtype,expected):
+&gt;       assert expected == log.getCountByType(logtype)
+E       AssertionError: assert 1 == 0
+E        +  where 0 = &lt;bound method Log.getCountByType of &lt;logfile.Log object at 0x10da55978&gt;&gt;(&apos;INVALIDLOGTYPE&apos;)
+E        +    where &lt;bound method Log.getCountByType of &lt;logfile.Log object at 0x10da55978&gt;&gt; = &lt;logfile.Log object at 0x10da55978&gt;.getCountByType
+
+test_Log.py:38: AssertionError</failure></testcase><testcase classname="test_Log" file="test_Log.py" line="14" name="test_LogTypeCount[123-123]" time="0.0017032623291015625"><failure message="assert 123 == 0
+ +  where 0 = &lt;bound method Log.getCountByType of &lt;logfile.Log object at 0x10da557f0&gt;&gt;(123)
+ +    where &lt;bound method Log.getCountByType of &lt;logfile.Log object at 0x10da557f0&gt;&gt; = &lt;logfile.Log object at 0x10da557f0&gt;.getCountByType">log = &lt;logfile.Log object at 0x10da557f0&gt;, logtype = 123, expected = 123
+
+    @pytest.mark.parametrize(&quot;logtype,expected&quot;, [
+        (&apos;INFO&apos;,50),
+        (&apos;WARNING&apos;,11),
+        (&apos;ERROR&apos;,3),
+        (&apos;INFO&apos;,0),
+        (&apos;WARNING&apos;,0),
+        (&apos;ERROR&apos;,0),
+        (&apos;INFO&apos;,-1),
+        (&apos;WARNING&apos;,-1),
+        (&apos;ERROR&apos;,-1),
+        (&apos;INFO&apos;,9999999999),
+        (&apos;WARNING&apos;,9999999999),
+        (&apos;ERROR&apos;,9999999999),
+        (&apos;INVALIDLOGTYPE&apos;,0),
+        (&apos;INVALIDLOGTYPE&apos;,-1),
+        (&apos;INVALIDLOGTYPE&apos;,1),
+        (123,123),
+        (&apos;&apos;,1),
+        (None,0),
+        (None,1),
+        (&apos;INFO&apos;,None),
+    ])
+    def test_LogTypeCount(log,logtype,expected):
+&gt;       assert expected == log.getCountByType(logtype)
+E       assert 123 == 0
+E        +  where 0 = &lt;bound method Log.getCountByType of &lt;logfile.Log object at 0x10da557f0&gt;&gt;(123)
+E        +    where &lt;bound method Log.getCountByType of &lt;logfile.Log object at 0x10da557f0&gt;&gt; = &lt;logfile.Log object at 0x10da557f0&gt;.getCountByType
+
+test_Log.py:38: AssertionError</failure></testcase><testcase classname="test_Log" file="test_Log.py" line="14" name="test_LogTypeCount[-1]" time="0.001743316650390625"><failure message="AssertionError: assert 1 == 0
+ +  where 0 = &lt;bound method Log.getCountByType of &lt;logfile.Log object at 0x10da5f390&gt;&gt;(&apos;&apos;)
+ +    where &lt;bound method Log.getCountByType of &lt;logfile.Log object at 0x10da5f390&gt;&gt; = &lt;logfile.Log object at 0x10da5f390&gt;.getCountByType">log = &lt;logfile.Log object at 0x10da5f390&gt;, logtype = &apos;&apos;, expected = 1
+
+    @pytest.mark.parametrize(&quot;logtype,expected&quot;, [
+        (&apos;INFO&apos;,50),
+        (&apos;WARNING&apos;,11),
+        (&apos;ERROR&apos;,3),
+        (&apos;INFO&apos;,0),
+        (&apos;WARNING&apos;,0),
+        (&apos;ERROR&apos;,0),
+        (&apos;INFO&apos;,-1),
+        (&apos;WARNING&apos;,-1),
+        (&apos;ERROR&apos;,-1),
+        (&apos;INFO&apos;,9999999999),
+        (&apos;WARNING&apos;,9999999999),
+        (&apos;ERROR&apos;,9999999999),
+        (&apos;INVALIDLOGTYPE&apos;,0),
+        (&apos;INVALIDLOGTYPE&apos;,-1),
+        (&apos;INVALIDLOGTYPE&apos;,1),
+        (123,123),
+        (&apos;&apos;,1),
+        (None,0),
+        (None,1),
+        (&apos;INFO&apos;,None),
+    ])
+    def test_LogTypeCount(log,logtype,expected):
+&gt;       assert expected == log.getCountByType(logtype)
+E       AssertionError: assert 1 == 0
+E        +  where 0 = &lt;bound method Log.getCountByType of &lt;logfile.Log object at 0x10da5f390&gt;&gt;(&apos;&apos;)
+E        +    where &lt;bound method Log.getCountByType of &lt;logfile.Log object at 0x10da5f390&gt;&gt; = &lt;logfile.Log object at 0x10da5f390&gt;.getCountByType
+
+test_Log.py:38: AssertionError</failure></testcase><testcase classname="test_Log" file="test_Log.py" line="14" name="test_LogTypeCount[None-0]" time="0.0013852119445800781"></testcase><testcase classname="test_Log" file="test_Log.py" line="14" name="test_LogTypeCount[None-1]" time="0.0016949176788330078"><failure message="assert 1 == 0
+ +  where 0 = &lt;bound method Log.getCountByType of &lt;logfile.Log object at 0x10da58278&gt;&gt;(None)
+ +    where &lt;bound method Log.getCountByType of &lt;logfile.Log object at 0x10da58278&gt;&gt; = &lt;logfile.Log object at 0x10da58278&gt;.getCountByType">log = &lt;logfile.Log object at 0x10da58278&gt;, logtype = None, expected = 1
+
+    @pytest.mark.parametrize(&quot;logtype,expected&quot;, [
+        (&apos;INFO&apos;,50),
+        (&apos;WARNING&apos;,11),
+        (&apos;ERROR&apos;,3),
+        (&apos;INFO&apos;,0),
+        (&apos;WARNING&apos;,0),
+        (&apos;ERROR&apos;,0),
+        (&apos;INFO&apos;,-1),
+        (&apos;WARNING&apos;,-1),
+        (&apos;ERROR&apos;,-1),
+        (&apos;INFO&apos;,9999999999),
+        (&apos;WARNING&apos;,9999999999),
+        (&apos;ERROR&apos;,9999999999),
+        (&apos;INVALIDLOGTYPE&apos;,0),
+        (&apos;INVALIDLOGTYPE&apos;,-1),
+        (&apos;INVALIDLOGTYPE&apos;,1),
+        (123,123),
+        (&apos;&apos;,1),
+        (None,0),
+        (None,1),
+        (&apos;INFO&apos;,None),
+    ])
+    def test_LogTypeCount(log,logtype,expected):
+&gt;       assert expected == log.getCountByType(logtype)
+E       assert 1 == 0
+E        +  where 0 = &lt;bound method Log.getCountByType of &lt;logfile.Log object at 0x10da58278&gt;&gt;(None)
+E        +    where &lt;bound method Log.getCountByType of &lt;logfile.Log object at 0x10da58278&gt;&gt; = &lt;logfile.Log object at 0x10da58278&gt;.getCountByType
+
+test_Log.py:38: AssertionError</failure></testcase><testcase classname="test_Log" file="test_Log.py" line="14" name="test_LogTypeCount[INFO-None]" time="0.0016455650329589844"><failure message="AssertionError: assert None == 50
+ +  where 50 = &lt;bound method Log.getCountByType of &lt;logfile.Log object at 0x10da69518&gt;&gt;(&apos;INFO&apos;)
+ +    where &lt;bound method Log.getCountByType of &lt;logfile.Log object at 0x10da69518&gt;&gt; = &lt;logfile.Log object at 0x10da69518&gt;.getCountByType">log = &lt;logfile.Log object at 0x10da69518&gt;, logtype = &apos;INFO&apos;, expected = None
+
+    @pytest.mark.parametrize(&quot;logtype,expected&quot;, [
+        (&apos;INFO&apos;,50),
+        (&apos;WARNING&apos;,11),
+        (&apos;ERROR&apos;,3),
+        (&apos;INFO&apos;,0),
+        (&apos;WARNING&apos;,0),
+        (&apos;ERROR&apos;,0),
+        (&apos;INFO&apos;,-1),
+        (&apos;WARNING&apos;,-1),
+        (&apos;ERROR&apos;,-1),
+        (&apos;INFO&apos;,9999999999),
+        (&apos;WARNING&apos;,9999999999),
+        (&apos;ERROR&apos;,9999999999),
+        (&apos;INVALIDLOGTYPE&apos;,0),
+        (&apos;INVALIDLOGTYPE&apos;,-1),
+        (&apos;INVALIDLOGTYPE&apos;,1),
+        (123,123),
+        (&apos;&apos;,1),
+        (None,0),
+        (None,1),
+        (&apos;INFO&apos;,None),
+    ])
+    def test_LogTypeCount(log,logtype,expected):
+&gt;       assert expected == log.getCountByType(logtype)
+E       AssertionError: assert None == 50
+E        +  where 50 = &lt;bound method Log.getCountByType of &lt;logfile.Log object at 0x10da69518&gt;&gt;(&apos;INFO&apos;)
+E        +    where &lt;bound method Log.getCountByType of &lt;logfile.Log object at 0x10da69518&gt;&gt; = &lt;logfile.Log object at 0x10da69518&gt;.getCountByType
+
+test_Log.py:38: AssertionError</failure></testcase></testsuite>
