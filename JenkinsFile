@@ -1,0 +1,40 @@
+
+pipeline {
+    agent any
+    stages {
+        stage('Preparation') { // preparing test environment on jenkins slave machine
+            steps {
+                sh """
+                    python --version
+                    curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+                    python get-pip.py
+                    pip install pytest
+                    pip install pytest-html
+                """
+            }
+        }
+        stage('Test') { // this is where we run tests
+            steps {
+                sh """
+                    git clone git@github.com:henrythtruong/TigeraIntTest.git
+                """
+                sh """
+                    cd TigeraIntTest
+                    export PYTHONPATH=${PYTHONPATH}:.
+                    pytest -v --html=LogTest.html --junitxml=LogTest.xml --inputlog test.log
+                """
+            }
+            post {
+                always {
+                    junit keepLongStdio: true, testResults: 'LogTest.xml'
+                    publishHTML target: [
+                        reportDir: '.',
+                        reportFiles: 'LogTest.html',
+                        reportName: 'Tigera Interview Test Report'
+                    ]
+                }
+            }
+        }
+
+    }
+}
